@@ -1,0 +1,33 @@
+arr=[]
+from datetime import datetime,timedelta
+for i in (df.columns):
+    
+    date=df.iloc[-1,1]
+    date=date.split('-')
+    year=int('20'+date[2])
+    month=int(date[1])
+    day=int(date[0])
+    date = datetime(year, month, day)
+    date += timedelta(days=1)
+    curr1=i
+    curr1=curr1.split('(')[-1]
+    curr1=curr1[0:3]
+    print(curr1)
+    date=str(date)
+    date=date.split(' ')
+    date=date[0]
+    print(date)
+    url = "https://api.apilayer.com/exchangerates_data/{0}?symbols={1}&base=USD".format(date,curr1)
+
+    payload = {}
+    headers= {
+      "apikey": "KUQL29uNaq0gOHvXrd6O3sUa0k0Wwn7m"
+    }
+
+    response = requests.request("GET", url, headers=headers, data = payload)
+
+    status_code = response.status_code
+    result = response.text
+    result = response.text
+    
+    print(result)
