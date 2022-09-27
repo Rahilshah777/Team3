@@ -1,4 +1,5 @@
 
+
 import streamlit as st
 import datetime
 import math
@@ -11,7 +12,6 @@ from streamlit_option_menu import option_menu
 from streamlit_player import st_player
 import streamlit.components.v1 as components
 
-df = pd.read_pickle("sample.pkl")
 dic = {
     '01':'Jan',
     '02':'Feb',
@@ -51,6 +51,7 @@ with open("contributors.html",'r') as f:
 def html():
     components.html(contributors,height=1400,scrolling=True)
 def exchanger():
+    df = pd.read_pickle("sample.pkl")
     left,middle,right = st.columns(3)
     with left:
         inp = st.number_input('AMOUNT',value=1.00,key='first_box')
@@ -136,6 +137,8 @@ def tech():
 
 
 def charts():
+    
+    df = pd.read_pickle("fnl.pkl")
     left,right = st.columns(2)
         
     with left:
@@ -256,6 +259,8 @@ def charts():
         st.plotly_chart(plot3)
 
 def charts2():
+    
+    df = pd.read_pickle("fnl.pkl")
     left,right = st.columns(2)
         
     with left:
