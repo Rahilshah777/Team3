@@ -1,5 +1,5 @@
 # Team3
-Nortern Trust Currency Exchanger
+Northern Trust Currency Exchanger
 
 Step1: create Virtual Environment 
 
