@@ -1,5 +1,4 @@
 
-from turtle import color
 import streamlit as st
 import datetime
 import math
